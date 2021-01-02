@@ -11,6 +11,7 @@ import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptors';
 import { registerLocaleData } from '@angular/common';
 import locale_el from '@angular/common/locales/el';
+import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 
 registerLocaleData(locale_el);
 
@@ -33,7 +34,8 @@ registerLocaleData(locale_el);
       useValue: 'el' // 'de-DE' for Germany, 'fr-FR' for France ...
     },
     {provide: HTTP_INTERCEPTORS, useClass:ErrorInterceptor,multi:true},
-    {provide: HTTP_INTERCEPTORS, useClass:LoadingInterceptor,multi:true}
+    {provide: HTTP_INTERCEPTORS, useClass:LoadingInterceptor,multi:true},
+    {provide: HTTP_INTERCEPTORS, useClass:JwtInterceptor,multi:true}
   ],
   bootstrap: [AppComponent]
 })

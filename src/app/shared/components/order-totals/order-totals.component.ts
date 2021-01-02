@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-order-totals',
-  templateUrl: './order-totals.component.html',
+  templateUrl: './order-totals.component.html'
 })
 export class OrderTotalsComponent implements OnInit {
   @Input() shippingPrice: number;

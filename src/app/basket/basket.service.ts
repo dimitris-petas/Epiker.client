@@ -6,6 +6,7 @@ import { IBasket, IBasketItem, Basket, IBasketTotals } from '../shared/models/ba
 import { map } from 'rxjs/operators';
 import { IProduct } from '../shared/models/product';
 import { IDeliveryMethod } from '../shared/models/deliveryMethod';
+import { decimalDigest } from '@angular/compiler/src/i18n/digest';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class BasketService {
   basket$ = this.basketSource.asObservable();
   private basketTotalSource = new BehaviorSubject<IBasketTotals>(null);
   basketTotal$ = this.basketTotalSource.asObservable();
-  shipping = 0;
+  shipping = Math.floor(Math.random() * 10) + 1;
 
   constructor(private http: HttpClient) { }
 
@@ -148,7 +149,7 @@ export class BasketService {
       id: item.id,
       productName: item.name,
       price: item.price,
-      pictureUrl: item.pictureUrl,
+      picture: item.picture,
       quantity,
       brand: item.productBrand,
       type: item.productType

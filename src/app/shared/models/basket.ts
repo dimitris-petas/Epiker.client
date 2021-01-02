@@ -14,7 +14,7 @@ export interface IBasketItem {
     productName: string;
     price: number;
     quantity: number;
-    pictureUrl: string;
+    picture: string;
     brand: string;
     type: string;
 }
