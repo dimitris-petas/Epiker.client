@@ -80,7 +80,7 @@ a {
   color: #343a40;
 
   &.active {
-    color: orange;
+    color: rgb(0, 0, 0);
   }
 }
 
@@ -410,4 +410,25 @@ button.nav-link {
 #breadcrumb {
   background-color: #f5f5f5;
   padding-top: 10rem !important;
+}
+
+.StripeElement{
+  height: 3.125em;
+}
+
+.list-group-item {
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1em;
+
+  &:focus {
+      outline: none;
+  }
+
+
+  &:not(.active):hover {
+      color: rgb(255, 255, 255);
+      background-color: rgb(84, 4, 116);
+  }
 }

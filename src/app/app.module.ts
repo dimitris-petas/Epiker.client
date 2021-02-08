@@ -29,13 +29,9 @@ registerLocaleData(locale_el);
     NgxSpinnerModule
   ],
   providers: [
-    {
-      provide: LOCALE_ID,
-      useValue: 'el' // 'de-DE' for Germany, 'fr-FR' for France ...
-    },
-    {provide: HTTP_INTERCEPTORS, useClass:ErrorInterceptor,multi:true},
-    {provide: HTTP_INTERCEPTORS, useClass:LoadingInterceptor,multi:true},
-    {provide: HTTP_INTERCEPTORS, useClass:JwtInterceptor,multi:true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
   ],
   bootstrap: [AppComponent]
 })
